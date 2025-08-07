@@ -1,0 +1,37 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Profile from "~/components/home/Profile.astro";
+import About from "~/components/home/About.astro";
+import Project from "~/components/home/Project.astro";
+import Skill from "~/components/home/Skill.astro";
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+  <div class="w-[95%] max-w-6xl container mx-auto">
+    <Profile client:visible />
+
+    <About client:visible />
+
+    <Project client:visible />
+
+    <Skill client:visible />
+  </div>
+</Layout>
+<style>
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0f172a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #4f46e5;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6366f1;
+  }
+</style>

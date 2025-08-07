@@ -1,0 +1,126 @@
+---
+import TypingEffect from "../solid/TypingEffect";
+---
+
+<!-- Hero Section -->
+<section
+  id="home"
+  class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
+>
+  <div class="absolute top-0 left-0 w-full h-full z-0">
+    <div
+      class="absolute top-20 left-20 w-64 h-64 rounded-full bg-purple-600 opacity-20 blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute bottom-20 right-20 w-64 h-64 rounded-full bg-indigo-600 opacity-20 blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute top-1/4 right-1/4 w-32 h-32 rounded-full bg-pink-500 opacity-20 blur-2xl"
+    >
+    </div>
+  </div>
+  <div
+    class="max-w-7xl mx-auto px-6 py-20 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+  >
+    <div class="space-y-6">
+      <h3 class="text-4xl text-purple-400 font-medium">
+        Hello There, <br />I'm <TypingEffect
+          client:visible
+          texts={[
+            "Muhammad Hisyam",
+            "A Fullstack Developer",
+            "A DevOps & CI/CD Engineer",
+            "A Digital Creator",
+          ]}
+          speed={100}
+          delay={2000}
+        />
+      </h3>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-4 py-2 bg-slate-800/80 rounded-full text-sm text-white">
+          Fullstack Developer
+        </span>
+        <span class="px-4 py-2 bg-slate-800/80 rounded-full text-sm text-white">
+          DevOps & CI/CD
+        </span>
+        <span class="px-4 py-2 bg-slate-800/80 rounded-full text-sm text-white">
+          Digital Creator
+        </span>
+      </div>
+      <p class="text-lg text-slate-400 max-w-xl">
+        I craft exceptional digital experiences with a focus on aesthetics, user
+        experience, and clean code. Let's build something amazing together.
+      </p>
+      <div class="flex space-x-4">
+        <a
+          href="#contact"
+          class="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full font-medium hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/40"
+          >Hire Me</a
+        >
+        <a
+          href="#projects"
+          class="px-8 py-3 border border-slate-600 rounded-full font-medium hover:bg-slate-800/50 transition-all duration-300"
+          >View Work</a
+        >
+      </div>
+    </div>
+
+    <div class="relative flex justify-center">
+      <div
+        class="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 glass-card rounded-2xl overflow-hidden shadow-xl"
+      >
+        <img
+          src="/public/profile-removebg-preview.png"
+          alt="Profile Image"
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <div
+        class="absolute -bottom-6 -left-6 w-32 h-32 bg-purple-600/20 rounded-2xl -z-10 float-animation"
+      >
+      </div>
+      <div
+        class="absolute -top-6 -right-6 w-32 h-32 bg-indigo-600/20 rounded-2xl -z-10 float-animation"
+        style="animation-delay: 2s;"
+      >
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Custom animations */
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Glassmorphism effect */
+  .glass-card {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+  }
+
+  /* Typewriter effect */
+  .typing {
+    border-right: 2px solid;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+  }
+</style>

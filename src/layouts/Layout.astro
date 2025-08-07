@@ -1,0 +1,74 @@
+---
+import "~/styles/global.css";
+import Header from "./Header.astro";
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <!-- Title -->
+    <title>Muhammad Hisyam - Portofolio</title>
+
+    <!-- Meta Description -->
+    <meta
+      name="description"
+      content="Portofolio Muhammad Hisyam - Fullstack Developer. Jelajahi proyek, pengalaman, dan keahlian teknologi terbaru."
+    />
+
+    <!-- Open Graph Meta Tags for Social Media Sharing -->
+    <meta property="og:title" content="Portofolio Muhammad Hisyam" />
+    <meta
+      property="og:description"
+      content="Jelajahi karya dan keahlian Muhammad Hisyam dalam pengembangan web dan teknologi digital."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-image.jpg" />
+    <meta property="og:url" content="https://muhammadhisyam.dev" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Portofolio Muhammad Hisyam" />
+    <meta
+      name="twitter:description"
+      content="Lihat karya terbaru dan pengalaman Muhammad Hisyam sebagai developer."
+    />
+    <meta name="twitter:image" content="/twitter-image.jpg" />
+
+    <!-- Author & Theme -->
+    <meta name="author" content="Muhammad Hisyam" />
+    <meta name="theme-color" content="#0f172a" />
+
+    <!-- Generator (Optional) -->
+    <meta name="generator" content="Astro" />
+
+    <!-- Font & Stylesheet (You can customize) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <Header />
+
+    <main
+      class="bg-slate-900 text-white font-sans antialiased overflow-x-hidden"
+    >
+      <slot />
+    </main>
+
+    <footer>
+      <!-- Informasi kontak atau tautan sosial -->
+    </footer>
+  </body>
+</html>
+
+<style></style>
