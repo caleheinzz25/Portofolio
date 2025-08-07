@@ -22,19 +22,10 @@ I’m a results-driven Fullstack Developer with a strong background in web appli
 | **DevOps**   | Docker, GitHub Actions, WSL |
 | **Others**   | Git, Markdown, REST, JWT |
 
-## 🧩 Featured Projects
-
-| Name | Description | Stack |
-|------|-------------|-------|
-| **E-Commerce Platform** | Multi-store app with advanced filtering, payments via Xendit, and order management | Spring Boot, PostgreSQL, Redis, SolidJS |
-| **Portfolio Website** | Static portfolio site with dark mode, animated typing effect, responsive design | Astro, TailwindCSS, TypeScript |
-| **Cart & Checkout System** | Store-level order grouping with integrated payment logic | SolidJS, Spring Boot, Xendit |
-
 ## ✨ Highlights
 
 - ⚙ Built custom checkout logic for multi-store architecture
 - 🧠 Applied graph theory for category-based product recommendation
 - 🔐 Integrated secure authentication with JWT and user roles
 
-## 📂 Project Structure
 
