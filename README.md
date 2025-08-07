@@ -1,47 +1,40 @@
-# Astro Starter Kit: Basics
+# 👨‍💻 caleheinzz — Fullstack Developer
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+Welcome to my portfolio repository. This project showcases my personal website, built to highlight my skills, experiences, and selected projects in fullstack development.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🚀 About Me
 
-## 🚀 Project Structure
+I’m a results-driven Fullstack Developer with a strong background in web application development, CI/CD, and scalable systems. I specialize in:
 
-Inside of your Astro project, you'll see the following folders and files:
+- Frontend: SolidJS, React, Astro, TailwindCSS
+- Backend: Spring Boot, Node.js, REST API
+- DevOps: Docker, GitHub Actions, CI/CD pipelines
+- Database: PostgreSQL, Redis
+- Tools: Git, WSL, VS Code
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+## 🛠️ Tech Stack
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+| Area        | Technologies |
+|-------------|--------------|
+| **Frontend** | SolidJS, Astro, Tailwind, React |
+| **Backend**  | Spring Boot, Express, Node.js |
+| **Database** | PostgreSQL, Redis |
+| **DevOps**   | Docker, GitHub Actions, WSL |
+| **Others**   | Git, Markdown, REST, JWT |
 
-## 🧞 Commands
+## 🧩 Featured Projects
 
-All commands are run from the root of the project, from a terminal:
+| Name | Description | Stack |
+|------|-------------|-------|
+| **E-Commerce Platform** | Multi-store app with advanced filtering, payments via Xendit, and order management | Spring Boot, PostgreSQL, Redis, SolidJS |
+| **Portfolio Website** | Static portfolio site with dark mode, animated typing effect, responsive design | Astro, TailwindCSS, TypeScript |
+| **Cart & Checkout System** | Store-level order grouping with integrated payment logic | SolidJS, Spring Boot, Xendit |
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+## ✨ Highlights
 
-## 👀 Want to learn more?
+- ⚙ Built custom checkout logic for multi-store architecture
+- 🧠 Applied graph theory for category-based product recommendation
+- 🔐 Integrated secure authentication with JWT and user roles
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-# Portofolio
+## 📂 Project Structure
+
