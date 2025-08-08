@@ -1,3 +1,33 @@
+---
+const projects = [
+  {
+    title: "E-commerce Platform",
+    description:
+      "A modern e-commerce solution with seamless checkout and inventory management.",
+    image:
+      "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80",
+    technologies: ["React", "Node.js", "MongoDB"],
+    link: "#",
+  },
+  {
+    title: "Health Analytics Dashboard",
+    description: "Interactive data visualization for health metrics tracking.",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+    technologies: ["D3.js", "TypeScript", "Firebase"],
+    link: "#",
+  },
+  {
+    title: "AI Chat Interface",
+    description: "Natural language processing chatbot with sentiment analysis.",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+    technologies: ["Python", "TensorFlow", "WebSockets"],
+    link: "#",
+  },
+];
+---
+
 <!-- Projects Section -->
 <section id="projects" class="py-20 bg-slate-900/50">
   <div class="max-w-7xl mx-auto px-6">
@@ -11,123 +41,38 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Project 1 -->
-      <div
-        class="glass-card rounded-xl overflow-hidden group transition-all duration-500 hover:-translate-y-2"
-      >
-        <div class="relative overflow-hidden">
-          <img
-            src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80"
-            alt="Project 1"
-            class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-          />
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6"
-          >
-            <a
-              href="#"
-              class="px-4 py-2 bg-purple-600 rounded-md text-white hover:bg-purple-700 transition-colors duration-300"
-              >View Details</a
-            >
+      {
+        projects.map((project) => (
+          <div class="glass-card rounded-xl overflow-hidden group transition-all duration-500 hover:-translate-y-2">
+            <div class="relative overflow-hidden">
+              <img
+                src={project.image}
+                alt={project.title}
+                class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <a
+                  href={project.link}
+                  class="px-4 py-2 bg-purple-600 rounded-md text-white hover:bg-purple-700 transition-colors duration-300"
+                >
+                  View Details
+                </a>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">{project.title}</h3>
+              <p class="text-slate-400 mb-4">{project.description}</p>
+              <div class="flex flex-wrap gap-2">
+                {project.technologies.map((tech) => (
+                  <span class="text-xs px-3 py-1 bg-slate-800 rounded-full">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2">E-commerce Platform</h3>
-          <p class="text-slate-400 mb-4">
-            A modern e-commerce solution with seamless checkout and inventory
-            management.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-xs px-3 py-1 bg-slate-800 rounded-full"
-              >React</span
-            >
-            <span class="text-xs px-3 py-1 bg-slate-800 rounded-full"
-              >Node.js</span
-            >
-            <span class="text-xs px-3 py-1 bg-slate-800 rounded-full"
-              >MongoDB</span
-            >
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 2 -->
-      <div
-        class="glass-card rounded-xl overflow-hidden group transition-all duration-500 hover:-translate-y-2"
-      >
-        <div class="relative overflow-hidden">
-          <img
-            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
-            alt="Project 2"
-            class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-          />
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6"
-          >
-            <a
-              href="#"
-              class="px-4 py-2 bg-purple-600 rounded-md text-white hover:bg-purple-700 transition-colors duration-300"
-              >View Details</a
-            >
-          </div>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2">Health Analytics Dashboard</h3>
-          <p class="text-slate-400 mb-4">
-            Interactive data visualization for health metrics tracking.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-xs px-3 py-1 bg-slate-800 rounded-full"
-              >D3.js</span
-            >
-            <span class="text-xs px-3 py-1 bg-slate-800 rounded-full"
-              >TypeScript</span
-            >
-            <span class="text-xs px-3 py-1 bg-slate-800 rounded-full"
-              >Firebase</span
-            >
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 3 -->
-      <div
-        class="glass-card rounded-xl overflow-hidden group transition-all duration-500 hover:-translate-y-2"
-      >
-        <div class="relative overflow-hidden">
-          <img
-            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
-            alt="Project 3"
-            class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-          />
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6"
-          >
-            <a
-              href="#"
-              class="px-4 py-2 bg-purple-600 rounded-md text-white hover:bg-purple-700 transition-colors duration-300"
-              >View Details</a
-            >
-          </div>
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2">AI Chat Interface</h3>
-          <p class="text-slate-400 mb-4">
-            Natural language processing chatbot with sentiment analysis.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-xs px-3 py-1 bg-slate-800 rounded-full"
-              >Python</span
-            >
-            <span class="text-xs px-3 py-1 bg-slate-800 rounded-full"
-              >TensorFlow</span
-            >
-            <span class="text-xs px-3 py-1 bg-slate-800 rounded-full"
-              >WebSockets</span
-            >
-          </div>
-        </div>
-      </div>
+        ))
+      }
     </div>
 
     <div class="text-center mt-12">

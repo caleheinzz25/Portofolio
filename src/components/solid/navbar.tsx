@@ -1,12 +1,13 @@
 import { onMount } from "solid-js";
 import { createSignal } from "solid-js";
+import { GameWrapper } from "./games/Games";
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = createSignal(false);
   const [activeIndex, setActiveIndex] = createSignal(0);
+  const [popupOpen, setPopupOpen] = createSignal(false);
 
   onMount(() => {
-    // Initialize slider position
     updateSlider();
   });
 
@@ -26,7 +27,6 @@ export function Navbar() {
       slider.style.width = `${width}px`;
       slider.style.left = `${left}px`;
     } else {
-      // Initialize with first item if no element provided
       const firstItem = document.querySelector(".nav-item") as HTMLElement;
       if (firstItem) {
         updateSlider(firstItem);
@@ -36,7 +36,24 @@ export function Navbar() {
 
   const handleNavClick = (index: number, e: Event) => {
     setActiveIndex(index);
+    setPopupOpen(false); // Close popup when another nav item is clicked
     updateSlider(e.currentTarget as HTMLElement);
+  };
+
+  const handlePopupClick = (e: Event) => {
+    e.preventDefault();
+    setPopupOpen(!popupOpen());
+    if (!popupOpen()) {
+      // If closing popup, reset active index to none
+      setActiveIndex(-1);
+      const slider = document.getElementById("slider") as HTMLElement;
+      if (slider) {
+        slider.style.width = "0";
+      }
+    } else {
+      // If opening popup, update slider position
+      updateSlider(e.currentTarget as HTMLElement);
+    }
   };
 
   const handleMouseEnter = (e: Event) => {
@@ -46,11 +63,18 @@ export function Navbar() {
   };
 
   const handleMouseLeave = () => {
-    const activeItem = document.querySelector(
-      `.nav-item[data-index="${activeIndex()}"]`
-    ) as HTMLElement;
-    if (activeItem) {
-      updateSlider(activeItem);
+    if (activeIndex() >= 0) {
+      const activeItem = document.querySelector(
+        `.nav-item[data-index="${activeIndex()}"]`
+      ) as HTMLElement;
+      if (activeItem) {
+        updateSlider(activeItem);
+      }
+    } else {
+      const slider = document.getElementById("slider") as HTMLElement;
+      if (slider) {
+        slider.style.width = "0";
+      }
     }
   };
 
@@ -59,7 +83,6 @@ export function Navbar() {
     { name: "About Me", icon: "fa-user", src: "#about" },
     { name: "Projects", icon: "fa-briefcase", src: "#projects" },
     { name: "Skills", icon: "fa-code", src: "#skills" },
-    { name: "Contact", icon: "fa-envelope", src: "#contact" },
   ];
 
   const mobileNavItems = [
@@ -70,7 +93,7 @@ export function Navbar() {
 
   return (
     <>
-      <nav class="bg-gray-900/60 backdrop-blur-md shadow-sm fixed z-50 rounded-xl top-4 left-1/2 transform border border-gray-800 -translate-x-1/2 w-[95%] max-w-6xl">
+      <nav class="bg-gray-950 bg-opacity-90 backdrop-blur-md shadow-lg fixed z-50 rounded-xl top-4 left-1/2 transform border border-gray-800 -translate-x-1/2 w-[95%] max-w-6xl">
         <div class="max-w-6xl mx-auto px-4">
           <div class="flex justify-between items-center h-16">
             {/* Logo */}
@@ -102,6 +125,18 @@ export function Navbar() {
                   <span>{item.name}</span>
                 </a>
               ))}
+              <button
+                class={`nav-item h-full flex items-center px-5 font-medium text-sm ${
+                  popupOpen()
+                    ? "text-blue-400 active"
+                    : "text-gray-300 hover:text-blue-400"
+                } transition-colors duration-200 relative group`}
+                onClick={handlePopupClick}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                <i class="fas fa-gamepad"></i>
+              </button>
             </div>
 
             {/* Secondary Nav */}
@@ -136,6 +171,13 @@ export function Navbar() {
           </div>
         </div>
       </nav>
+
+      {/* Games Popup */}
+      {popupOpen() && (
+        <div class="fixed top-24 right-4 z-50 backdrop-blur-md border border-gray-700 rounded-xl shadow-lg p-4">
+          <GameWrapper onClose={() => setPopupOpen(false)} />
+        </div>
+      )}
 
       {/* Mobile menu */}
       <div
@@ -189,7 +231,7 @@ export function Navbar() {
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       z-index: 10;
       border-radius: 2px;
-      box-shadow: 0 1px 3px rgba(59, 130, 246, 0.3);
+      box-shadow: 0 1px 3px rgba(59, 130, 246, 0.4);
     }
 
     .mobile-menu {
