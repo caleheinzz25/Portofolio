@@ -1,9 +1,9 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
-import solidJs from '@astrojs/solid-js';
+import solidJs from "@astrojs/solid-js";
 
-import tailwindcss from '@tailwindcss/vite';
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,8 +13,12 @@ export default defineConfig({
     plugins: [tailwindcss()],
     resolve: {
       alias: {
-        "~": new URL("./src", import.meta.url).pathname
-      }
-    }
-  }
+        "~": new URL("./src", import.meta.url).pathname,
+      },
+    },
+    preview: {
+      allowedHosts: ["caleheinzz.my.id", "localhost"],
+      port: 3000,
+    },
+  },
 });
