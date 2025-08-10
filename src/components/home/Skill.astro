@@ -1,3 +1,325 @@
+---
+const skills = [
+  // Web Fundamentals
+  {
+    name: "HTML5",
+    icon: "fab fa-html5",
+    color: "text-indigo-400",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "CSS3",
+    icon: "fab fa-css3-alt",
+    color: "text-blue-400",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "JavaScript",
+    icon: "fab fa-js",
+    color: "text-yellow-400",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "Bootstrap",
+    icon: "fab fa-bootstrap",
+    color: "text-purple-500",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "Tailwind CSS",
+    icon: "fas fa-wind",
+    color: "text-sky-400",
+    bg: "bg-slate-800",
+  },
+
+  // Frontend Frameworks
+  {
+    name: "React.js",
+    icon: "fab fa-react",
+    color: "text-blue-500",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "Vue.js",
+    icon: "fab fa-vuejs",
+    color: "text-green-500",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "Svelte.js",
+    icon: "fas fa-fire",
+    color: "text-orange-500",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "Next.js",
+    icon: "fas fa-forward",
+    color: "text-gray-300",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "SvelteKit",
+    icon: "fas fa-seedling",
+    color: "text-orange-400",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "SolidJS",
+    icon: "fas fa-gem",
+    color: "text-cyan-400",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "Astro.js",
+    icon: "fas fa-star",
+    color: "text-yellow-300",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "SolidStart",
+    icon: "fas fa-play",
+    color: "text-cyan-500",
+    bg: "bg-slate-800",
+  },
+
+  // Backend
+  {
+    name: "Node.js",
+    icon: "fab fa-node-js",
+    color: "text-green-500",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "Express.js",
+    icon: "fas fa-code",
+    color: "text-gray-400",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "Hapi.js",
+    icon: "fas fa-code",
+    color: "text-yellow-500",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "Laravel",
+    icon: "fab fa-laravel",
+    color: "text-red-500",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "Spring Boot",
+    icon: "fas fa-leaf",
+    color: "text-green-400",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "Golang",
+    icon: "fas fa-code",
+    color: "text-sky-400",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "Go Gin",
+    icon: "fas fa-wine-glass",
+    color: "text-rose-400",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "Go Fiber",
+    icon: "fas fa-feather",
+    color: "text-cyan-300",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "GORM",
+    icon: "fas fa-database",
+    color: "text-green-300",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "Rust Axum",
+    icon: "fas fa-network-wired",
+    color: "text-sky-500",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "Rust",
+    icon: "fas fa-gears",
+    color: "text-orange-600",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "GraphQL",
+    icon: "fas fa-project-diagram",
+    color: "text-pink-500",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "gRPC",
+    icon: "fas fa-exchange-alt",
+    color: "text-green-500",
+    bg: "bg-slate-800",
+  },
+
+  // Databases
+  {
+    name: "MongoDB",
+    icon: "fas fa-database",
+    color: "text-cyan-400",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "PostgreSQL",
+    icon: "fas fa-database",
+    color: "text-blue-400",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "Redis",
+    icon: "fas fa-memory",
+    color: "text-red-500",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "Valkey",
+    icon: "fas fa-memory",
+    color: "text-teal-400",
+    bg: "bg-slate-800",
+  },
+
+  // Messaging & Streaming
+  {
+    name: "Kafka",
+    icon: "fas fa-stream",
+    color: "text-orange-400",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "RabbitMQ",
+    icon: "fas fa-paper-plane",
+    color: "text-orange-500",
+    bg: "bg-slate-800",
+  },
+
+  // Tools & DevOps
+  {
+    name: "Docker",
+    icon: "fab fa-docker",
+    color: "text-blue-400",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "Maven",
+    icon: "fas fa-cube",
+    color: "text-orange-500",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "Gradle",
+    icon: "fas fa-cogs",
+    color: "text-green-400",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "Bun",
+    icon: "fas fa-bread-slice",
+    color: "text-yellow-400",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "pnpm",
+    icon: "fas fa-box",
+    color: "text-yellow-300",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "Jenkins",
+    icon: "fas fa-robot",
+    color: "text-red-400",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "CI/CD",
+    icon: "fas fa-sync",
+    color: "text-green-400",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "Nginx",
+    icon: "fas fa-server",
+    color: "text-green-500",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "Apache",
+    icon: "fas fa-server",
+    color: "text-orange-600",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "VPS",
+    icon: "fas fa-cloud",
+    color: "text-blue-500",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "Virtual Machine",
+    icon: "fas fa-desktop",
+    color: "text-gray-400",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "PM2",
+    icon: "fas fa-tasks",
+    color: "text-green-300",
+    bg: "bg-slate-800",
+  },
+
+  // Testing & API
+  {
+    name: "Postman",
+    icon: "fas fa-paper-plane",
+    color: "text-orange-400",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "Swagger",
+    icon: "fas fa-book",
+    color: "text-green-400",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "Playwright",
+    icon: "fas fa-vial",
+    color: "text-purple-400",
+    bg: "bg-slate-800",
+  },
+
+  // Programming Languages
+  {
+    name: "Python",
+    icon: "fab fa-python",
+    color: "text-yellow-400",
+    bg: "bg-slate-800",
+  },
+
+  // Others
+  {
+    name: "Markdown",
+    icon: "fas fa-file-alt",
+    color: "text-gray-300",
+    bg: "bg-slate-800",
+  },
+  {
+    name: "VS Code",
+    icon: "fas fa-code",
+    color: "text-blue-400",
+    bg: "bg-slate-800",
+  },
+];
+---
+
 <!-- Skills Section -->
 <section id="skills" class="py-20 relative">
   <div class="max-w-7xl mx-auto px-6">
@@ -11,100 +333,22 @@
     </div>
 
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-      <!-- Skill 1 -->
-      <div
-        class="glass-card p-6 rounded-xl flex flex-col items-center transition-all duration-300 hover:bg-slate-800/50 hover:-translate-y-2"
-      >
-        <div
-          class="w-16 h-16 mb-4 flex items-center justify-center rounded-full bg-slate-800 text-indigo-400 text-3xl"
-        >
-          <i class="fab fa-html5"></i>
-        </div>
-        <h3 class="font-medium">HTML5</h3>
-        <div class="w-full bg-slate-800/50 rounded-full h-1.5 mt-4">
-          <div class="bg-indigo-500 h-1.5 rounded-full" style="width: 90%">
+      {
+        skills.map((skill) => (
+          <div class="glass-card p-6 rounded-xl flex flex-col items-center transition-all duration-300 hover:bg-slate-800/50 hover:-translate-y-2">
+            <div
+              class={`w-16 h-16 mb-4 flex items-center justify-center rounded-full ${skill.bg} ${skill.color} text-3xl`}
+            >
+              <i class={skill.icon} />
+            </div>
+            <h3 class="font-medium text-center">{skill.name}</h3>
           </div>
-        </div>
-      </div>
-
-      <!-- Skill 2 -->
-      <div
-        class="glass-card p-6 rounded-xl flex flex-col items-center transition-all duration-300 hover:bg-slate-800/50 hover:-translate-y-2"
-      >
-        <div
-          class="w-16 h-16 mb-4 flex items-center justify-center rounded-full bg-slate-800 text-blue-400 text-3xl"
-        >
-          <i class="fab fa-css3-alt"></i>
-        </div>
-        <h3 class="font-medium">CSS3</h3>
-        <div class="w-full bg-slate-800/50 rounded-full h-1.5 mt-4">
-          <div class="bg-blue-500 h-1.5 rounded-full" style="width: 85%"></div>
-        </div>
-      </div>
-
-      <!-- Skill 3 -->
-      <div
-        class="glass-card p-6 rounded-xl flex flex-col items-center transition-all duration-300 hover:bg-slate-800/50 hover:-translate-y-2"
-      >
-        <div
-          class="w-16 h-16 mb-4 flex items-center justify-center rounded-full bg-slate-800 text-yellow-400 text-3xl"
-        >
-          <i class="fab fa-js"></i>
-        </div>
-        <h3 class="font-medium">JavaScript</h3>
-        <div class="w-full bg-slate-800/50 rounded-full h-1.5 mt-4">
-          <div class="bg-yellow-500 h-1.5 rounded-full" style="width: 80%">
-          </div>
-        </div>
-      </div>
-
-      <!-- Skill 4 -->
-      <div
-        class="glass-card p-6 rounded-xl flex flex-col items-center transition-all duration-300 hover:bg-slate-800/50 hover:-translate-y-2"
-      >
-        <div
-          class="w-16 h-16 mb-4 flex items-center justify-center rounded-full bg-slate-800 text-blue-500 text-3xl"
-        >
-          <i class="fab fa-react"></i>
-        </div>
-        <h3 class="font-medium">React</h3>
-        <div class="w-full bg-slate-800/50 rounded-full h-1.5 mt-4">
-          <div class="bg-blue-500 h-1.5 rounded-full" style="width: 75%"></div>
-        </div>
-      </div>
-
-      <!-- Skill 5 -->
-      <div
-        class="glass-card p-6 rounded-xl flex flex-col items-center transition-all duration-300 hover:bg-slate-800/50 hover:-translate-y-2"
-      >
-        <div
-          class="w-16 h-16 mb-4 flex items-center justify-center rounded-full bg-slate-800 text-green-500 text-3xl"
-        >
-          <i class="fab fa-node-js"></i>
-        </div>
-        <h3 class="font-medium">Node.js</h3>
-        <div class="w-full bg-slate-800/50 rounded-full h-1.5 mt-4">
-          <div class="bg-green-500 h-1.5 rounded-full" style="width: 70%"></div>
-        </div>
-      </div>
-
-      <!-- Skill 6 -->
-      <div
-        class="glass-card p-6 rounded-xl flex flex-col items-center transition-all duration-300 hover:bg-slate-800/50 hover:-translate-y-2"
-      >
-        <div
-          class="w-16 h-16 mb-4 flex items-center justify-center rounded-full bg-slate-800 text-cyan-400 text-3xl"
-        >
-          <i class="fas fa-database"></i>
-        </div>
-        <h3 class="font-medium">MongoDB</h3>
-        <div class="w-full bg-slate-800/50 rounded-full h-1.5 mt-4">
-          <div class="bg-cyan-500 h-1.5 rounded-full" style="width: 65%"></div>
-        </div>
-      </div>
+        ))
+      }
     </div>
   </div>
 </section>
+
 <style>
   /* Custom gradient text */
   .gradient-text {

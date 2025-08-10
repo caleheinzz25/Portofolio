@@ -1,17 +1,18 @@
 <!-- About Section -->
 <section id="about" class="py-20 relative">
+  <!-- Background Gradient -->
   <div class="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-slate-900 to-transparent -z-10"></div>
 
   <div class="max-w-7xl mx-auto px-6">
+    <!-- Section Heading -->
     <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">
-        About Me
-      </h2>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">About Me</h2>
       <p class="max-w-2xl mx-auto text-slate-400">
         Get to know the person behind the code — passionate, driven, and always learning.
       </p>
     </div>
 
+    <!-- Content Grid -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <!-- Image Card -->
       <div class="relative">
@@ -19,8 +20,9 @@
           <div class="aspect-w-4 aspect-h-3 bg-slate-800/50 rounded-xl overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?auto=format&fit=crop&w=1740&q=80"
-              alt="Coding in progress"
+              alt="Person coding on a laptop"
               class="w-full h-full object-cover"
+              loading="lazy"
             />
           </div>
         </div>
@@ -34,33 +36,40 @@
       <div class="space-y-6">
         <h3 class="text-2xl font-bold">Fullstack Developer & DevOps/Linux Enthusiast</h3>
         <p class="text-slate-400">
-          I’m a developer with a strong passion for building clean, performant, and scalable web applications. 
-          Over the last 4+ years, I've collaborated with diverse teams to deliver robust systems, applying best practices in software engineering, CI/CD pipelines, containerization, and server management.
+          Experienced Software Engineer with 4+ years of expertise in software development, project coordination, and cross-functional collaboration.
+          Skilled in delivering scalable and maintainable technical solutions, streamlining workflows, and improving team efficiency in both remote and on-site settings.
+          Proven track record in contributing to successful system implementations, aligning with stakeholder objectives, and driving measurable business impact across various industries.
         </p>
 
-        <div class="grid grid-cols-2 gap-4">
-          <div class="space-y-1">
-            <span class="text-slate-400">Name:</span>
-            <p class="font-medium">Muhammad Hisyam</p>
-          </div>
-          <div class="space-y-1">
-            <span class="text-slate-400">Email:</span>
-            <p class="font-medium">muhammad2504hisyam@gmail.com</p>
-          </div>
-          <div class="space-y-1">
-            <span class="text-slate-400">From:</span>
-            <p class="font-medium">Jawa Barat, Bekasi, Indonesia</p>
-          </div>
-          <div class="space-y-1">
-            <span class="text-slate-400">Freelance:</span>
-            <p class="font-medium text-purple-400">Available</p>
-          </div>
+        <!-- Contact Info -->
+        <div class="mt-2 space-y-1 text-slate-400 text-sm">
+          <p>
+            📧
+            <a href="mailto:muhammad2504hisyam@gmail.com" class="hover:text-white">
+              muhammad2504hisyam@gmail.com
+            </a>
+          </p>
+          <p>📍 Bekasi, Indonesia</p>
+          <p>
+            🔗
+            <a href="https://www.linkedin.com/in/muhammad-hisyam-65502332a/" target="_blank" rel="noopener" class="hover:text-white">
+              LinkedIn
+            </a>
+          </p>
+          <p>
+            💻
+            <a href="https://github.com/caleheinzz25" target="_blank" rel="noopener" class="hover:text-white">
+              GitHub
+            </a>
+          </p>
         </div>
 
+        <!-- Download CV -->
         <div class="pt-4">
           <a
             href="/caleheinzz-cv.pdf"
             target="_blank"
+            rel="noopener"
             class="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors duration-300"
           >
             <span>Download CV</span>
@@ -72,6 +81,7 @@
   </div>
 </section>
 
+<!-- Gradient Text Style -->
 <style>
   .gradient-text {
     background: linear-gradient(45deg, #6366f1, #a855f7, #ec4899);
