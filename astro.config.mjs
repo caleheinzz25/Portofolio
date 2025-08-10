@@ -8,17 +8,17 @@ import tailwindcss from "@tailwindcss/vite";
 // https://astro.build/config
 export default defineConfig({
   integrations: [solidJs()],
-
+  server: {
+    allowedHosts: ["localhost", "caleheinzz.my.id"],
+    port: 3000,
+    host: true,
+  },
   vite: {
     plugins: [tailwindcss()],
     resolve: {
       alias: {
         "~": new URL("./src", import.meta.url).pathname,
       },
-    },
-    preview: {
-      allowedHosts: ["caleheinzz.my.id", "localhost"],
-      port: 3000,
     },
   },
 });
